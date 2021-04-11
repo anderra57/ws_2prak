@@ -131,7 +131,10 @@ def format_bytes(size):
 
 
 def get_valid_filename(s):
-    s = str(s).strip().replace(' ', '_')
+    s = str(s).strip()
+    sp = s.split(' ')
+    sp = sp[:-1]
+    s = '_'.join([str(el) for el in sp])
     return re.sub(r'(?u)[^-\w.]', '', s)
 
 
